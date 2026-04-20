@@ -1,29 +1,18 @@
-// VARIABLES
-// -------------------------
 @import "variables";
-
-
-// BOOTSTRAP PACKAGE
-// -------------------------
 @import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
 
 
 // BASE / GLOBAL
-// -------------------------
 body {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.03rem;
 }
 
-
-// PARTIAL IMPORTS
-// -------------------------
 @import "main_card";
 @import "components";
 
 
 // TYPOGRAPHY
-// -------------------------
 h2 {
   font-size: calc(1.325rem + 1.9vw) !important;
   font-weight: bold;
@@ -58,7 +47,6 @@ p {
 
 
 // HEADER / NAVBAR
-// -------------------------
 #page-header {
   background-color: #000000 !important;
   border-bottom: 2px solid #89CFF0 !important;
@@ -111,7 +99,6 @@ p {
 
 
 // HERO / TEXTMEDIA WITH BACKGROUND IMAGE
-// -------------------------
 .frame-type-textmedia {
   min-height: 85vh;
   display: flex;
@@ -167,5 +154,695 @@ p {
     position: relative;
     z-index: 1;
     color: #FFFFFF !important;
+  }
+}
+
+// Farben
+$bg-dark: #0a0a0a;
+$bg-soft: #131313;
+$bg-card: rgba(255, 255, 255, 0.04);
+$bg-card-hover: rgba(255, 255, 255, 0.07);
+
+$text-main: #f5f5f5;
+$text-soft: #b8b8b8;
+$text-muted: #8e8e8e;
+
+$gold: #d4af37;
+$gold-light: #f1d77a;
+$gold-dark: #8f6b12;
+
+$border-soft: rgba(255, 255, 255, 0.08);
+$shadow-gold: 0 0 30px rgba(212, 175, 55, 0.15);
+$shadow-dark: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+$radius-lg: 24px;
+$radius-md: 16px;
+$radius-sm: 10px;
+
+$transition: all 0.3s ease;
+
+// Mixins
+@mixin glass-card {
+  background: $bg-card;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid $border-soft;
+  box-shadow: $shadow-dark;
+  border-radius: $radius-lg;
+}
+
+@mixin gold-gradient {
+  background: linear-gradient(135deg, $gold-dark 0%, $gold 45%, $gold-light 100%);
+}
+
+@mixin section-spacing {
+  padding: 4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 2.75rem 0;
+  }
+}
+
+// Base
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+          radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 25%),
+          radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.05), transparent 30%),
+          linear-gradient(180deg, #050505 0%, #0d0d0d 45%, #111 100%);
+  color: $text-main;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.body-bg {
+  overflow-x: hidden;
+}
+
+a {
+  color: $gold;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $gold-light;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.element-header,
+.element-subheader,
+.grillzilla-card__title,
+.grillzilla-news-card__title,
+.grillzilla-news-card__title a,
+.frame-header h1,
+.frame-header h2,
+.frame-header h3,
+.frame-header h4,
+.frame-header h5,
+.frame-header h6 {
+  font-family: "Poppins", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+  color: #fff !important;
+}
+
+.element-header {
+  font-weight: 700;
+}
+
+.element-subheader {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 400;
+}
+
+.grillzilla-news-card__title a:hover {
+  color: $gold-light !important;
+}
+
+// Buttons
+.btn,
+.btn-primary {
+  @include gold-gradient;
+  color: #111 !important;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+  transition: $transition;
+  position: relative;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(212, 175, 55, 0.35);
+    color: #000 !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-sm {
+  padding: 0.65rem 1.15rem;
+  font-size: 0.9rem;
+}
+
+// Header / Navigation
+#page-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+
+  .container-mainnavigation {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  img {
+    height: 52px;
+    width: auto;
+    filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.18));
+    transition: $transition;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.navbar-nav {
+  gap: 0.35rem;
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    color: $text-main;
+    font-weight: 500;
+    padding: 0.8rem 1rem !important;
+    border-radius: 999px;
+    transition: $transition;
+    position: relative;
+
+    &:hover {
+      color: $gold-light;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    &.active,
+    &[aria-current="true"] {
+      color: $gold;
+      background: rgba(212, 175, 55, 0.08);
+      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.15);
+    }
+  }
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 0.5rem 0.7rem;
+  background: rgba(255, 255, 255, 0.03);
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.2);
+  }
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+// Sections
+.section {
+  @include section-spacing;
+  position: relative;
+}
+
+.section-default {
+  .frame {
+    margin-bottom: 2rem;
+  }
+}
+
+// Hero full width
+#c1 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100%;
+
+  .frame-group-container,
+  .frame-group-inner,
+  .frame-container,
+  .frame-inner,
+  .textmedia,
+  .textmedia-item,
+  .textmedia-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .frame-container.frame-container-default,
+  .container,
+  .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .frame-group-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 !important;
+    min-height: 100vh;
+  }
+
+  .frame-group-inner,
+  .frame-container,
+  .frame-inner,
+  .textmedia,
+  .textmedia-item,
+  .textmedia-text {
+    min-height: 100vh;
+  }
+
+  .frame-backgroundimage-container,
+  .frame-backgroundimage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .frame-backgroundimage {
+    background-position: center center;
+    background-size: cover;
+    transform: scale(1.02);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+              linear-gradient(
+                              180deg,
+                              rgba(0, 0, 0, 0.35) 0%,
+                              rgba(0, 0, 0, 0.5) 50%,
+                              rgba(0, 0, 0, 0.8) 100%
+              ),
+              radial-gradient(circle at center, rgba(212, 175, 55, 0.12), transparent 45%);
+    }
+  }
+
+  .frame-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .frame-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .frame-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: $radius-lg;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  h1.element-header {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.22);
+
+    span {
+      @include gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  h2.element-subheader {
+    font-size: clamp(1.05rem, 2vw, 1.5rem);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+}
+
+.section.section-default {
+  padding-top: 0;
+
+  #c1 {
+    margin-top: 0;
+  }
+}
+
+// Feature Cards
+.grillzilla-card {
+  @include glass-card;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: $transition;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), transparent 45%);
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: $bg-card-hover;
+    border-color: rgba(212, 175, 55, 0.18);
+    box-shadow:
+            $shadow-dark,
+            $shadow-gold;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  &__text {
+    color: $text-soft;
+    margin-bottom: 1.4rem;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+// CTA Section
+#c22 {
+  .frame-container {
+    @include glass-card;
+    padding: 2.5rem;
+    text-align: center;
+    background:
+            linear-gradient(135deg, rgba(212, 175, 55, 0.09), rgba(255, 255, 255, 0.03)),
+            rgba(255, 255, 255, 0.03);
+  }
+
+  .element-header {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// News Section
+#c24 {
+  .element-header {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+.grillzilla-news-card {
+  @include glass-card;
+  overflow: hidden;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.18);
+    box-shadow:
+            $shadow-dark,
+            $shadow-gold;
+
+    .grillzilla-news-card__img {
+      transform: scale(1.06);
+    }
+  }
+
+  &__img-wrap {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #111;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+  }
+
+  &__text {
+    color: $text-soft;
+    margin-bottom: 1rem;
+  }
+}
+
+// General Frames
+.frame-container {
+  position: relative;
+}
+
+.frame-header {
+  margin-bottom: 1rem;
+}
+
+.frame-type-mask_card {
+  .frame-container {
+    height: 100%;
+  }
+}
+
+// Footer
+#page-footer {
+  margin-top: 4rem;
+  background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.25)),
+          #080808;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  color: $text-soft;
+
+  .footer-section {
+    padding: 2.5rem 0;
+  }
+
+  .footer-section-content {
+    .section-column {
+      margin-bottom: 1.5rem;
+    }
+
+    h2,
+    .element-header {
+      color: #fff !important;
+      margin-bottom: 1rem;
+    }
+
+    p,
+    a {
+      color: $text-soft;
+    }
+
+    a:hover {
+      color: $gold-light;
+    }
+  }
+
+  .footer-section-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    color: $text-muted;
+  }
+
+  .footer-copyright p {
+    margin: 0;
+  }
+}
+
+// Language Menu
+.language-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: $text-main;
+
+    &:hover {
+      background: rgba(212, 175, 55, 0.08);
+      color: $gold-light;
+    }
+  }
+}
+
+// Scroll Top
+.scroll-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  @include gold-gradient;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.04);
+  }
+
+  .scroll-top-icon::before {
+    content: "↑";
+    font-size: 1.3rem;
+    color: #111;
+    font-weight: 800;
+  }
+}
+
+// Cookie Consent
+#cookieconsent {
+  .cc-window,
+  .cc-banner,
+  .cc-floating {
+    background: rgba(17, 17, 17, 0.96) !important;
+    color: $text-main !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    backdrop-filter: blur(10px);
+  }
+
+  .cc-btn {
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    border: none !important;
+  }
+
+  .cc-allow,
+  .cc-dismiss {
+    @include gold-gradient;
+    color: #111 !important;
+  }
+
+  .cc-deny {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: $text-main !important;
+  }
+}
+
+// Utility polish
+.news-list-view .row {
+  row-gap: 0.5rem;
+}
+
+.container,
+.container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.28);
+  color: #fff;
+}
+
+// Mobile
+@media (max-width: 991px) {
+  #mainnavigation {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: $radius-md;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navbar-nav {
+    gap: 0.4rem;
+  }
+
+  .navbar-nav .nav-link {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  #c1 {
+    .frame-group-container,
+    .frame-group-inner,
+    .frame-container,
+    .frame-inner,
+    .textmedia,
+    .textmedia-item,
+    .textmedia-text,
+    .frame-backgroundimage-container,
+    .frame-backgroundimage {
+      min-height: 70vh;
+    }
+
+    .frame-inner {
+      padding: 0 1rem;
+    }
+
+    .frame-header {
+      padding: 1.4rem;
+    }
+  }
+
+  .grillzilla-card__body,
+  .grillzilla-news-card__body {
+    padding: 1.25rem;
+  }
+
+  #c22 .frame-container {
+    padding: 1.5rem;
   }
 }
