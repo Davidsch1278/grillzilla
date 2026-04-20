@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:render partial="Maps" section="leaflet" arguments="{_all}" />
+
+<div class="grillzilla-contact-wrap">
+    <div class="grillzilla-address-list">
+        <f:for each="{addresses}" as="address">
+            <div class="grillzilla-address">
+                <f:if condition="{address.name}">
+                    <p class="address-name">
+                        <i class="fa-solid fa-building"></i>
+                        {address.name}
+                    </p>
+                </f:if>
+                <f:if condition="{address.address}">
+                    <p class="address-street">
+                        <i class="fa-solid fa-location-dot"></i>
+                        {address.address}<f:if condition="{address.zip} || {address.city}">,
+                        {address.zip} {address.city}
+                    </f:if>
+                    </p>
+                </f:if>
+                <f:if condition="{address.phone}">
+                    <p class="address-phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:{address.phone}">{address.phone}</a>
+                    </p>
+                </f:if>
+                <f:if condition="{address.email}">
+                    <p class="address-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:{address.email}">{address.email}</a>
+                    </p>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</div>
+
+</html>

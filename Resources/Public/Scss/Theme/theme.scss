@@ -1,0 +1,171 @@
+// VARIABLES
+// -------------------------
+@import "variables";
+
+
+// BOOTSTRAP PACKAGE
+// -------------------------
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+
+// BASE / GLOBAL
+// -------------------------
+body {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.03rem;
+}
+
+
+// PARTIAL IMPORTS
+// -------------------------
+@import "main_card";
+@import "components";
+
+
+// TYPOGRAPHY
+// -------------------------
+h2 {
+  font-size: calc(1.325rem + 1.9vw) !important;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-default h2 {
+  color: #000000;
+  text-align: left;
+}
+
+.element-subheader {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1rem !important;
+  color: #89CFF0 !important;
+  font-style: normal !important;
+}
+
+.section-default .element-subheader {
+  text-align: left;
+}
+
+p {
+  text-align: center !important;
+}
+
+.section-default p {
+  text-align: left !important;
+}
+
+
+// HEADER / NAVBAR
+// -------------------------
+#page-header {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #89CFF0 !important;
+}
+
+.container-mainnavigation {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-left: 0.5rem !important;
+  padding-right: 1rem !important;
+}
+
+.navbar-brand {
+  flex-shrink: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.navbar-collapse {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.navbar-mainnavigation .nav-link {
+  white-space: nowrap !important;
+  color: #FFFFFF !important;
+
+  &:hover {
+    color: #89CFF0 !important;
+  }
+}
+
+.navbar-language {
+  margin-left: auto !important;
+  padding-right: 0.5rem;
+
+  .nav-link {
+    color: #FFFFFF !important;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.4rem !important;
+
+    &:hover,
+    &.active {
+      color: #89CFF0 !important;
+    }
+  }
+}
+
+
+// HERO / TEXTMEDIA WITH BACKGROUND IMAGE
+// -------------------------
+.frame-type-textmedia {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  .ce-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    mix-blend-mode: multiply;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 4rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.15em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 400 !important;
+    color: #FFFFFF !important;
+    text-transform: uppercase !important;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+  }
+
+  p,
+  .ce-bodytext {
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF !important;
+  }
+}

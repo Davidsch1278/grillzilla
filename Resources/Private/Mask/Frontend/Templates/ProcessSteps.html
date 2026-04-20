@@ -1,0 +1,41 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <div class="grillzilla-steps" id="steps-{data.uid}">
+        <f:if condition="{data.tx_mask_section_title}">
+            <h2 class="grillzilla-steps__heading">{data.tx_mask_section_title}</h2>
+        </f:if>
+
+        <div class="grillzilla-steps__counter">
+            <span class="grillzilla-steps__current">1</span>
+            <span class="grillzilla-steps__separator"> von </span>
+            <span class="grillzilla-steps__total">{data.tx_mask_steps -> f:count()}</span>
+        </div>
+
+        <div class="grillzilla-steps__wrapper">
+            <f:for each="{data.tx_mask_steps}" as="step" iteration="i">
+                <div class="grillzilla-steps__item{f:if(condition: i.isFirst, then: ' active')}"
+                     data-step="{i.cycle}">
+                    <div class="grillzilla-steps__number">{step.tx_mask_step_number}</div>
+                    <div class="grillzilla-steps__content">
+                        <h3 class="grillzilla-steps__title">{step.tx_mask_step_title}</h3>
+                        <p class="grillzilla-steps__text">{step.tx_mask_step_description}</p>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+
+        <div class="grillzilla-steps__nav">
+            <button class="btn btn-primary grillzilla-steps__btn" data-action="prev" disabled>
+                ← Zurück
+            </button>
+            <button class="btn btn-primary grillzilla-steps__btn" data-action="next">
+                Weiter →
+            </button>
+        </div>
+    </div>
+
+</f:section>
+</html>

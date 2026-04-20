@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+
+<div class="col-12 col-md-4 mb-4">
+    <div class="grillzilla-news-card h-100">
+        <f:if condition="{newsItem.mediaPreviews}">
+            <f:then>
+                <div class="grillzilla-news-card__img-wrap">
+                    <f:media class="grillzilla-news-card__img" file="{newsItem.mediaPreviews.0}"
+                             title="{newsItem.mediaPreviews.0.originalResource.title}"
+                             alt="{newsItem.mediaPreviews.0.originalResource.alternative}"
+                             loading="lazy" width="600" height="350" />
+                </div>
+            </f:then>
+        </f:if>
+        <div class="grillzilla-news-card__body">
+            <h5 class="grillzilla-news-card__title">
+                <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                    {newsItem.title}
+                </n:link>
+            </h5>
+            <n:removeMediaTags>
+                <p class="grillzilla-news-card__text">
+                    <f:if condition="{newsItem.teaser}">
+                        <f:then>
+                            {newsItem.teaser -> f:format.crop(maxCharacters: '120', respectWordBoundaries: '1')}
+                        </f:then>
+                        <f:else>
+                            {newsItem.bodytext -> f:format.crop(maxCharacters: '120', respectWordBoundaries: '1') -> f:format.stripTags()}
+                        </f:else>
+                    </f:if>
+                </p>
+            </n:removeMediaTags>
+            <n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-primary btn-sm" title="{newsItem.title}">
+                Read More
+            </n:link>
+        </div>
+    </div>
+</div>
+
+</html>

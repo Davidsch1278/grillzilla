@@ -1,0 +1,91 @@
+@import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
+
+
+page {
+    includeCSS {
+        theme = EXT:grillzilla/Resources/Public/Scss/Theme/theme.scss
+        css = https://use.fontawesome.com/releases/v6.4.2/css/all.css
+        css{
+            external = 1
+            media = all
+            excludeFromConcatenation = 1
+        }
+    }
+
+    includeJSFooter {
+        grillzilla_scripts = EXT:grillzilla/Resources/Public/JavaScript/main.js
+    }
+}
+
+page.config.contentObjectExceptionHandler = 0
+
+lib.maskContentElement {
+    templateRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements
+    }
+    partialRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements
+    }
+    layoutRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements
+    }
+}
+
+plugin.tx_form.settings.yamlConfigurations.100 = EXT:grillzilla/Configuration/Form/Setup.yaml
+module.tx_form.settings.yamlConfigurations.100 = EXT:grillzilla/Configuration/Form/Setup.yaml
+
+lib.contentElement.templateRootPaths {
+    0 = EXT:fluid_styled_content/Resources/Private/Templates/
+    10 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements/
+    20 = EXT:grillzilla/Resources/Private/Templates/ContentElements/
+}
+lib.contentElement.partialRootPaths {
+    0 = EXT:fluid_styled_content/Resources/Private/Partials/
+    10 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements/
+    20 = EXT:grillzilla/Resources/Private/Partials/ContentElements/
+}
+lib.contentElement.layoutRootPaths {
+    0 = EXT:fluid_styled_content/Resources/Private/Layouts/
+    10 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/
+    20 = EXT:grillzilla/Resources/Private/Layouts/ContentElements/
+}
+
+tt_content.mask_card {
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = tx_mask_bild
+        }
+    }
+}
+
+# tt_address Extension
+@import 'EXT:tt_address/Configuration/TypoScript/setup.typoscript'
+
+plugin.tx_ttaddress {
+    view {
+        templateRootPaths {
+            20 = EXT:grillzilla/Resources/Private/Templates/Extensions/TtAddress/
+        }
+        partialRootPaths {
+            20 = EXT:grillzilla/Resources/Private/Partials/Extensions/TtAddress/
+        }
+    }
+    settings {
+        sortBy = name
+        sortOrder = asc
+        groupBy =
+    }
+}
+config.tx_bootstrappackage.cookieconsent.enable = 0
+
+plugin.tx_ttaddress.settings {
+    map {
+        defaultPosition {
+            lat = 48.285472
+            lng = 14.294972
+        }
+    }
+}

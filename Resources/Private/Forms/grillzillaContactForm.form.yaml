@@ -1,0 +1,174 @@
+type: Form
+identifier: grillzillaContactForm
+label: 'Grillzilla Kontaktformular'
+prototypeName: standard
+renderingOptions:
+  submitButtonLabel: 'Absenden'
+
+finishers:
+  -
+    identifier: Redirect
+    options:
+      pageUid: 10
+  -
+    identifier: EmailToSender
+    options:
+      subject: 'Danke für Ihre Anfrage bei Grillzilla'
+      recipients:
+        '{field-email}': '{field-vorname} {field-nachname}'
+      senderAddress: grillzilla@gmail.com
+      senderName: 'Grillzilla Dentallabor'
+      addHtmlPart: true
+      translation:
+        language: default
+  -
+    identifier: EmailToReceiver
+    options:
+      subject: 'Neue Anfrage über die Website'
+      recipients:
+        grillzilla@gmail.com: 'Grillzilla'
+      senderAddress: '{field-email}'
+      senderName: '{field-vorname} {field-nachname}'
+      addHtmlPart: true
+      translation:
+        language: default
+
+renderables:
+
+  -
+    type: Page
+    identifier: page-1
+    label: 'Ihr Interesse'
+    renderingOptions:
+      previousButtonLabel: 'Zurück'
+      nextButtonLabel: 'Weiter'
+    renderables:
+      -
+        type: SingleSelect
+        identifier: field-interesse
+        label: 'Interessensgebiet'
+        defaultValue: ''
+        properties:
+          options:
+            '': '— Bitte wählen —'
+            gold: 'Gold Grillz'
+            silver: 'Silber Grillz'
+            zirkon: 'Zirkon Grillz'
+            custom: 'Custom / Individuelles Design'
+            info: 'Allgemeine Anfrage'
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+        validationErrorMessages:
+          -
+            code: 1221560910
+            message: 'Bitte ein Interessensgebiet auswählen'
+      -
+        type: RadioButton
+        identifier: field-newsletter
+        label: 'Newsletter abonnieren?'
+        defaultValue: '0'
+        properties:
+          options:
+            '1': 'Ja'
+            '0': 'Nein'
+
+  -
+    type: Page
+    identifier: page-2
+    label: 'Kontaktdaten'
+    renderingOptions:
+      previousButtonLabel: 'Zurück'
+      nextButtonLabel: 'Weiter'
+    renderables:
+      -
+        type: Text
+        identifier: field-vorname
+        label: 'Vorname'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            placeholder: 'Max'
+        validators:
+          -
+            identifier: NotEmpty
+        validationErrorMessages:
+          -
+            code: 1221560910
+            message: 'Bitte einen Vornamen angeben'
+      -
+        type: Text
+        identifier: field-nachname
+        label: 'Nachname'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            placeholder: 'Mustermann'
+        validators:
+          -
+            identifier: NotEmpty
+        validationErrorMessages:
+          -
+            code: 1221560910
+            message: 'Bitte einen Nachnamen angeben'
+      -
+        type: Email
+        identifier: field-email
+        label: 'E-Mail-Adresse'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            placeholder: 'max@beispiel.at'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+        validationErrorMessages:
+          -
+            code: 1221560910
+            message: 'Bitte eine gültige E-Mail-Adresse angeben'
+      -
+        type: Text
+        identifier: field-strasse
+        label: 'Straße und Hausnummer'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Musterstraße 12'
+      -
+        type: Text
+        identifier: field-plz
+        label: 'PLZ'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: '4020'
+      -
+        type: Text
+        identifier: field-ort
+        label: 'Ort'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Linz'
+      -
+        type: Tel
+        identifier: field-telefon
+        label: 'Telefonnummer (optional)'
+        defaultValue: ''
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: '+43 XXXX XXXXXX'
+
+  -
+    type: SummaryPage
+    identifier: page-summary
+    label: 'Zusammenfassung'
+    renderingOptions:
+      previousButtonLabel: 'Zurück'

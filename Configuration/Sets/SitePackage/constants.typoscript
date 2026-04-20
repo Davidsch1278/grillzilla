@@ -1,0 +1,5 @@
+plugin.tx_news.view.twb5.templateRootPath = EXT:grillzilla/Resources/Private/Templates/ExtNews/
+plugin.tx_news.view.twb5.partialRootPath = EXT:grillzilla/Resources/Private/Partials/ExtNews/
+plugin.tx_news.view.twb5.layoutRootPath = EXT:grillzilla/Resources/Private/Layouts/ExtNews/
+plugin.bootstrap_package.settings.cookieconsent.enable = 0
+

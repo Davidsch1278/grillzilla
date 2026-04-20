@@ -1,0 +1,744 @@
+// LOGIN
+// -------------------------
+.grillzilla-login-box {
+  max-width: 420px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border: 1px solid #89CFF0;
+  background: #fff;
+}
+
+.grillzilla-login-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grillzilla-login-legend {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  width: 100%;
+}
+
+.grillzilla-input {
+  border-color: #000 !important;
+  border-radius: 0 !important;
+
+  &:focus {
+    border-color: #89CFF0 !important;
+    box-shadow: 0 0 0 0.2rem rgba(137, 207, 240, 0.3) !important;
+  }
+}
+
+.grillzilla-forgot-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #89CFF0;
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+// CARDS
+// -------------------------
+.card {
+  border-radius: 0;
+  border-color: #e0e0e0;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(137, 207, 240, 0.25);
+    border-color: #89CFF0;
+  }
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 1rem;
+  text-align: left;
+  color: #000;
+}
+
+.card-footer {
+  background: #000;
+  border-top: 1px solid #89CFF0;
+
+  a {
+    color: #89CFF0;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.card.p-3 {
+  border-left: 4px solid #89CFF0;
+  border-radius: 0;
+
+  table {
+    width: 100%;
+    margin: 0.75rem 0;
+
+    td {
+      padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9rem;
+
+      &:first-child {
+        font-weight: 600;
+        color: #000;
+        width: 40%;
+      }
+
+      &:last-child {
+        color: #333;
+      }
+    }
+  }
+}
+
+.frame-type-mask_card {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+
+  @include media-breakpoint-down(md) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    float: none;
+  }
+}
+
+.grillzilla-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: 1.25rem;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+  }
+
+  &__text {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.frame-type-mask_card:first-of-type {
+  clear: left;
+}
+
+
+// ACCORDION
+// -------------------------
+.accordion-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0 !important;
+
+  &:not(.collapsed) {
+    background-color: #000;
+    color: #89CFF0;
+    box-shadow: none;
+  }
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+  border-color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+
+// BUTTONS
+// -------------------------
+.btn {
+  border-radius: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border-color: #89CFF0;
+  color: #89CFF0;
+
+  &:hover {
+    background-color: #89CFF0;
+    border-color: #89CFF0;
+    color: #000;
+  }
+}
+
+
+// FOOTER
+// -------------------------
+.grillzilla-footer {
+  background-color: #000000;
+  color: #cccccc;
+  padding: 3.5rem 0 1.5rem;
+  border-top: 2px solid #89CFF0;
+
+  h3,
+  h4,
+  h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #FFFFFF !important;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  p,
+  .bodytext {
+    color: #cccccc !important;
+    font-size: 0.9rem;
+    text-align: left !important;
+    margin-bottom: 0.4rem;
+  }
+
+  a {
+    color: #89CFF0 !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      color: #FFFFFF !important;
+      text-decoration: underline;
+    }
+  }
+
+  .frame {
+    margin-bottom: 0;
+  }
+}
+
+.grillzilla-footer-col {
+  padding: 0 1.5rem;
+}
+
+.grillzilla-footer-center {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.grillzilla-footer-right {
+  text-align: right;
+}
+
+.grillzilla-footer-divider {
+  border-color: rgba(137, 207, 240, 0.3);
+  margin: 2rem 0 1rem;
+}
+
+.grillzilla-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #888;
+
+  .grillzilla-footer-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #89CFF0;
+    font-size: 1rem;
+  }
+}
+
+.footer-section-meta {
+  display: none;
+}
+
+
+// CONTENT STRUCTURE / TYPO3 HELPERS
+// -------------------------
+.frame-type-text {
+  clear: both;
+  width: 100%;
+}
+
+#c1 {
+  margin-bottom: 3rem;
+}
+
+
+// NEWS CARDS
+// -------------------------
+.grillzilla-news-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(137, 207, 240, 0.25);
+    border-color: #89CFF0;
+  }
+
+  &__img-wrap {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+
+    a {
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        color: #89CFF0;
+      }
+    }
+  }
+
+  &__text {
+    color: #555;
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: left !important;
+    margin-bottom: 1rem;
+  }
+}
+
+
+// PROCESS STEPS
+// -------------------------
+.grillzilla-steps {
+  max-width: 700px;
+  margin: 3rem auto;
+
+  &__heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-align: center !important;
+    margin-bottom: 2rem;
+  }
+
+  &__counter {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #89CFF0;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  &__item {
+    display: none;
+    animation: stepFadeIn 0.3s ease;
+
+    &.active {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #89CFF0;
+    line-height: 1;
+    min-width: 70px;
+    border-right: 2px solid #89CFF0;
+    padding-right: 1.5rem;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    color: #555;
+    font-size: 0.95rem;
+    text-align: left !important;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  &__btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes stepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+// COOKIE BANNER
+// -------------------------
+#grillzilla-cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  border-top: 2px solid #89CFF0;
+  z-index: 9999;
+  padding: 1rem 0;
+}
+
+.grillzilla-cookie__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.grillzilla-cookie__text {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: left !important;
+}
+
+.grillzilla-cookie__link {
+  color: #89CFF0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.grillzilla-cookie__buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.grillzilla-cookie__btn {
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+
+  &--accept {
+    background: #89CFF0;
+    color: #000;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  &--essential {
+    background: transparent;
+    color: #89CFF0;
+    border: 1px solid #89CFF0;
+
+    &:hover {
+      background: #89CFF0;
+      color: #000;
+    }
+  }
+}
+
+
+// ADDRESS
+// -------------------------
+.grillzilla-address {
+  margin-bottom: 2rem;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #222;
+  }
+
+  i {
+    color: #89CFF0;
+    width: 1.2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .address-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: #89CFF0;
+    }
+  }
+}
+
+
+// TEXTMEDIA
+// -------------------------
+.grillzilla-textmedia {
+  &__accent-line {
+    width: 50px;
+    height: 3px;
+    background: #89CFF0;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    border: 1px solid #89CFF0;
+    padding: 1.5rem;
+  }
+}
+
+// Grillz Spotlight CE
+.grillzilla-spotlight {
+  margin: 3rem 0;
+
+  &__headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__stage {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__main-img-wrap {
+    flex: 0 0 60%;
+    position: relative;
+    background: #f5f5f5;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  &__main-img {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    &.active { opacity: 1; }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__info {
+    flex: 1;
+    position: relative;
+    min-height: 180px;
+  }
+
+  &__info-panel {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    &.active { opacity: 1; }
+  }
+
+  &__material {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #89CFF0;
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  &__thumbs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__thumb {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+
+    &:hover { border-color: #89CFF0; }
+    &.active { border-color: #89CFF0; }
+  }
+
+  &__thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.grillzilla-contact-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.grillzilla-map {
+  height: 350px;
+  width: 100%;
+  border: 1px solid #89CFF0;
+}

@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+        <div class="grillzilla-card h-100">
+            <f:if condition="{data.tx_mask_bild}">
+                <f:for each="{data.tx_mask_bild}" as="file">
+                    <f:image image="{file}" class="grillzilla-card__image" />
+                </f:for>
+            </f:if>
+            <div class="grillzilla-card__body">
+                <f:if condition="{data.tx_mask_titel}">
+                    <h3 class="grillzilla-card__title">{data.tx_mask_titel}</h3>
+                </f:if>
+                <f:if condition="{data.tx_mask_beschreibung}">
+                    <p class="grillzilla-card__text">{data.tx_mask_beschreibung}</p>
+                </f:if>
+                <f:if condition="{data.tx_mask_link}">
+                    <f:link.typolink parameter="{data.tx_mask_link}" class="btn btn-primary">
+                        Mehr erfahren
+                    </f:link.typolink>
+                </f:if>
+            </div>
+        </div>
+</f:section>
+</html>

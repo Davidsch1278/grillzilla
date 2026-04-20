@@ -1,0 +1,27 @@
+plugin:
+  bootstrap_package:
+    settings:
+      scss:
+        primary: '#89CFF0'
+        secondary: '#C0C0C0'
+    view:
+      layoutRootPath: 'EXT:grillzilla/Resources/Private/Layouts/'
+      partialRootPath: 'EXT:grillzilla/Resources/Private/Partials/'
+      templateRootPath: 'EXT:grillzilla/Resources/Private/Templates/'
+  bootstrap_package_contentelements:
+    view:
+      layoutRootPath: 'EXT:bootstrap_package/Resources/Private/Layouts/ContentElements/'
+      partialRootPath: 'EXT:bootstrap_package/Resources/Private/Partials/ContentElements/'
+      templateRootPath: 'EXT:bootstrap_package/Resources/Private/Templates/ContentElements/'
+page:
+  logo:
+    file: 'EXT:grillzilla/Resources/Public/Images/logo.png'
+    width: 60
+    alt: 'Grillzilla'
+    linktitle: 'Grillzilla'
+  favicon:
+    file: 'EXT:grillzilla/Resources/Public/Icons/favicon.ico'
+  fluidtemplate:
+    layoutRootPath: 'EXT:grillzilla/Resources/Private/Layouts/Page/'
+    partialRootPath: 'EXT:grillzilla/Resources/Private/Partials/Page/'
+    templateRootPath: 'EXT:grillzilla/Resources/Private/Templates/Page/'

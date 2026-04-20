@@ -1,0 +1,4 @@
+name: fhooe/grillzilla
+label: 'grillzilla'
+dependencies:
+  - bootstrap-package/full
